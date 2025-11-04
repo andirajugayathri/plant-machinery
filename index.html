@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -79,7 +81,7 @@
         </div>
     </section>
 
-    
+    <!-- Plant Machinery Insurance -->
     <section class="plant-machinery-section">
         <div class="container">
             <h2 class="plant-machinery-title">Plant Machinery Insurance</h2>
@@ -124,37 +126,56 @@
             <form id="quoteForm">
                 <div class="row g-4">
                     <div class="col-md-6">
-                        <input type="text" class="form-control form-control-custom" placeholder="First Name">
+                        <input type="text" class="form-control form-control-custom" placeholder="Full Name">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control form-control-custom" placeholder="First Name">
+                        <input type="text" class="form-control form-control-custom" placeholder="Company Name and/or trading name">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control form-control-custom" placeholder="First Name">
+                        <input type="text" class="form-control form-control-custom" placeholder="Contact No">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control form-control-custom" placeholder="First Name">
+                        <input type="text" class="form-control form-control-custom" placeholder="Email ID">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control form-control-custom" placeholder="First Name">
+                        <input type="text" class="form-control form-control-custom" placeholder="Your Occupation/Business activities">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control form-control-custom" placeholder="First Name">
+                        <input type="text" class="form-control form-control-custom" placeholder="Full Details of the Equipment/Machinery (year, make, model and value)">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control form-control-custom" placeholder="First Name">
+                        <input type="text" class="form-control form-control-custom" placeholder="How Much Public Liability Cover is Required?">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control form-control-custom" placeholder="First Name">
+                        <input type="text" class="form-control form-control-custom" placeholder="Do you need any other insurance?">
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <textarea class="form-control form-control-custom textarea-custom" placeholder="First Name"></textarea>
-                    </div>
+                    </div> -->
                 </div>
                 <button type="submit" class="submit-btn">Submit</button>
             </form>
         </div>
     </div>
+
+    <!-- How To Get Insure Section -->
+    <section class="insure-section">
+        <h2 class="insure-title">How To Get Insure</h2>
+        <p class="insure-description">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. versions of Lorem Ipsum.
+        </p>
+        <div class="steps-container">
+            <div class="step-card">
+                <h3 class="step-title">Fill The Form</h3>
+            </div>
+            <div class="step-card">
+                <h3 class="step-title">We Will Contact For More Details</h3>
+            </div>
+            <div class="step-card">
+                <h3 class="step-title">Get Quotation & Insured</h3>
+            </div>
+        </div>
+    </section>
 
     <!-- faq -->
      <section class="faq-section">
@@ -235,7 +256,7 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="row">
-                <div class="col-lg-4 col-md-6 footer-about">
+                <div class="col-lg-4 col-md-6 footer-about px-4">
                     <div class="logo">
                         <img src="" alt="">
                     </div>
@@ -244,22 +265,31 @@
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <div class="contact-text">+012 345 6789</div>
+                        <div class="contact-text">
+                            <a href="tel:+0123456789">+012 345 6789</a>
+                        </div>
                     </div>
+
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="contact-text">Lorem Ipsun</div>
+                        <div class="contact-text">
+                            Lorem ipsum
+                        </div>
                     </div>
+
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <div class="contact-text">info@plantmachinery.com</div>
+                        <div class="contact-text">
+                            <a href="mailto:info@plantmachinery.com">info@plantmachinery.com</a>
+                        </div>
                     </div>
+
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-2 col-md-6">
                     <h5>Quick Links</h5>
                     <ul class="footer-links">
                         <li><a href="#">About Us</a></li>
@@ -279,23 +309,22 @@
                         <li><a href="#">Update News</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <h5>Newsletter</h5>
-                    <p style="color: rgba(255,255,255,0.8); font-size: 15px;">Subscribe Our Newsletter To Get Latest Update And News</p>
+                    <p>Subscribe Our Newsletter To Get Latest Update and News</p>
                     <form class="newsletter-form">
                         <input type="email" class="newsletter-input" placeholder="Your Email" required>
                         <button type="submit" class="subscribe-btn">
-                            Subscribe Now <i class="fas fa-paper-plane"></i>
+                            Subscribe Now <i class="fa-regular fa-paper-plane"></i>
                         </button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© Copyright Plant Machinery All Rights Reserved.</p>
+            <p>© Copyright Plant Machinery. All Rights Reserved.</p>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
