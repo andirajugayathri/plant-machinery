@@ -279,6 +279,12 @@
             color: #003672;
             margin-bottom: 40px;
         }
+        .form-label{
+            font-weight: 500;
+        }
+        .form-label .required {
+            color: #FF7200;
+        }
 
         .form-label-custom {
             font-size: 0.85rem;
@@ -327,10 +333,10 @@
             box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
         }
 
-        .textarea-custom {
+        /* .textarea-custom {
             min-height: 120px!important;
             resize: vertical;
-        }
+        } */
 
         @media (max-width: 768px) {
             .coverage-cards {
@@ -477,6 +483,7 @@
 
             .step-title {
                 font-size: 1.3rem;
+                text-align:left ;
             }
         }
 
