@@ -412,7 +412,7 @@
         }
 
         /* Form Section */
-        .form-section {
+       .form-section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
@@ -444,7 +444,8 @@
             border: 2.05px solid #DDDDDD;
             border-radius: 8px;
             padding: 12px 18px;
-            font-size: 0.9rem;
+            font-size: 18px;
+            font-weight: 400;
             transition: all 0.3s ease;
             width: 100%;
             background-color: white!important;
@@ -463,14 +464,14 @@
             transform: translateY(-50%);
             background-color: white;
             padding: 0 5px;
-            color: #999;
-            font-size: 0.9rem;
-            font-weight: 500;
+            color: #757F95;
+            font-size: 16px;
+            font-weight: 400;
             pointer-events: none;
             transition: all 0.3s ease;
         }
 
-        .form-control-custom:focus + .form-label-floating{
+        .form-control-custom:focus + .form-label-floating {
             top: 0;
             transform: translateY(-50%);
             font-size: 0.75rem;
@@ -478,14 +479,18 @@
             font-weight: 600;
         }
 
-        .textarea-custom + .form-label-floating {
-            top: 20px;
-            transform: translateY(0);
+        .form-control-custom:not(:placeholder-shown) + .form-label-floating {
+            top: 0;
+            transform: translateY(-50%);
+            font-size:0.75rem;
+            font-weight: 600;
+            color: #FF7200; 
         }
 
-        .textarea-custom:focus + .form-label-floating,
-        .textarea-custom:not(:placeholder-shown) + .form-label-floating {
-            top: 0;
+
+        .textarea-custom:focus + .form-label-floating, 
+        .textarea-custom:not(:placeholder-shown) + .form-label-floating { 
+            top: 0; 
             transform: translateY(-50%);
         }
 
@@ -495,22 +500,44 @@
             background-repeat: no-repeat;
             background-position: right 15px center;
             padding-right: 40px;
+            font-size: 16px;
+            color:#000;
         }
-        select.form-control-custom:valid + .form-label-floating {
+
+        select.form-control-custom option[value=""] {
+            color: #757F95;
+        }
+
+        select.form-control-custom:focus {
+            border: 2px solid #FF7200 !important;
+        }
+
+        select.form-control-custom.has-value {
+            border: 2px solid #FF7200 !important;
+        }
+
+        select.form-control-custom:focus + .form-label-floating,
+        select.form-control-custom.has-value + .form-label-floating {
             top: 0;
             transform: translateY(-50%);
             font-size: 0.75rem;
             color: #FF7200;
             font-weight: 600;
         }
-        /* .required {
-            color: #FF7200;
-            margin-left: 2px;
-        } */
+
+        select.form-control-custom:not(:focus):not(.has-value) + .form-label-floating {
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            font-weight: 400;
+            color: #757F95;
+        }
+
         .textarea-custom {
             min-height: 100px;
             resize: vertical;
         }
+
         .submit-btn {
             background-color: #FF7200;
             color: white;
@@ -530,17 +557,7 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
         }
-        .form-control-custom:not(:placeholder-shown) {
-            border: 2px solid #FF7200 !important;
-        }
-        .form-control-custom:not(:placeholder-shown) + .form-label-floating {
-            top: 0;
-            transform: translateY(-50%);
-            font-size: 0.75rem;
-            color: #FF7200;
-            font-weight: 600;
-        }
-     
+
         @media (max-width: 768px) {
             .quote-form-container {
                 padding: 30px 20px;
@@ -775,7 +792,7 @@
         }
 
         .newsletter-input::placeholder {
-            color: #999;
+            color: #757F95;
         }
 
         .subscribe-btn {
