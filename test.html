@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Machinery Insurance Quote</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Plant Machinery Insurance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -14,262 +14,198 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .plant-hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: visible;
+            margin-bottom: 80px;
+        }
+
+        /* Background */
+        .plant-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .plant-hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .plant-hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                rgba(200, 225, 240, 0.4) 0%,
+                rgba(180, 215, 235, 0.3) 50%,
+                rgba(160, 200, 225, 0.2) 100%);
+            z-index: 1;
+        }
+
+        .plant-hero-content {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            padding: 80px 20px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .plant-title-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             padding: 40px 0;
         }
 
-        .form-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .quote-form-container {
-            background: white;
-            border: 1px solid #FF7200;
-            border-radius: 12px;
-            padding: 50px;
-            box-shadow: 0px 7px 29px 0px #64646F33;
-        }
-
-        .quote-form-title {
-            text-align: center;
-            font-size: 36px;
-            font-weight: 700;
-            font-family: "Inter";
-            color: #003672;
-            margin-bottom: 40px;
-        }
-
-        .form-group-floating {
-            position: relative;
+        .plant-title {
+            font-size: 120px;
+            font-weight: 900;
             margin-bottom: 0;
+            line-height: 1.2;
+            letter-spacing: -2px;
         }
 
-        .form-control-custom {
-            border: 2.05px solid #DDDDDD;
-            border-radius: 8px;
-            padding: 12px 18px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            width: 100%;
-            background-color: white!important;
+        .plant-title-main {
+            color: #0d3b66;
         }
 
-        .form-control-custom:focus {
-            border: 2px solid #FF7200;
-            box-shadow: none;
-            outline: none;
+        .plant-title-highlight {
+            color: #ff8800;
         }
 
-        .form-label-floating {
+        .plant-features {
             position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: white;
-            padding: 0 5px;
-            color: #999;
-            font-size: 0.9rem;
-            font-weight: 500;
-            pointer-events: none;
+            bottom: -60px;
+            left: 0;
+            right: 0;
+            padding: 0 20px;
+            z-index: 10;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            padding: 22px 25px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 15px;
             transition: all 0.3s ease;
+            height: 100%;
+            backdrop-filter: blur(10px);
         }
 
-        .form-control-custom:focus + .form-label-floating {
-            top: 0;
-            transform: translateY(-50%);
-            font-size: 0.75rem;
-            color: #FF7200;
-            font-weight: 600;
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
-        
-
-        .form-control-custom:not(:placeholder-shown) + .form-label-floating {
-            top: 0;
-            transform: translateY(-50%);
-            font-size: 0.75rem;
-            color: #FF7200;
-            font-weight: 600;
+        .feature-icon {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
         }
 
-        .textarea-custom:focus + .form-label-floating, 
-        .textarea-custom:not(:placeholder-shown) + .form-label-floating { 
-            top: 0; 
-            transform: translateY(-50%);
+        .feature-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: #ff8800;
         }
 
-        select.form-control-custom {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            padding-right: 40px;
-            color: #333;
+        .feature-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0d3b66;
+            margin: 0;
         }
 
-        select.form-control-custom option[value=""] {
-            color: #999;
+        @media(max-width:992px) {
+            .plant-title { font-size: 80px; }
         }
 
-        select.form-control-custom:focus {
-            border: 2px solid #FF7200 !important;
+        @media(max-width:768px) {
+            .plant-title { font-size: 60px; }
         }
 
-        select.form-control-custom.has-value {
-            border: 2px solid #FF7200 !important;
-        }
-
-        select.form-control-custom:focus + .form-label-floating,
-        select.form-control-custom.has-value + .form-label-floating {
-            top: 0;
-            transform: translateY(-50%);
-            font-size: 0.75rem;
-            color: #FF7200;
-            font-weight: 600;
-        }
-
-        select.form-control-custom:not(:focus):not(.has-value) + .form-label-floating {
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 0.9rem;
-            color: #999;
-        }
-
-        .textarea-custom {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background-color: #FF7200;
-            color: white;
-            border: none;
-            padding: 14px 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: block;
-            margin: 30px auto 0;
-        }
-
-        .submit-btn:hover {
-            background-color: #E55F00;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .quote-form-container {
-                padding: 30px 20px;
-            }
-
-            .quote-form-title {
-                font-size: 1.4rem;
-            }
-
-            .submit-btn {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .quote-form-title {
-                font-size: 1.2rem;
-                margin-bottom: 30px;
-            }
+        @media(max-width:576px) {
+            .plant-title { font-size: 45px; }
         }
     </style>
 </head>
 <body>
-    <div class="form-section">
-        <div class="quote-form-container">
-            <h2 class="quote-form-title">Get a Plant Machinery insurance quote</h2>
-            <form id="quoteForm" aria-label="Plant Machinery Insurance Quote Form">
+
+<section class="plant-hero">
+    <div class="plant-hero-bg">
+        <img src="your-background-image.jpg" alt="Plant Machinery">
+    </div>
+
+    <div class="plant-hero-content">
+        <div class="container">
+            <div class="plant-title-area">
+                <h1 class="plant-title">
+                    <span class="plant-title-main">Plant Machinery</span>
+                    <span class="plant-title-highlight">Insurance</span>
+                </h1>
+            </div>
+
+            <div class="plant-features">
                 <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="form-group-floating">
-                            <input id="fullName" type="text" class="form-control form-control-custom" placeholder=" " aria-required="true" required>
-                            <label for="fullName" class="form-label-floating">Full Name</label>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <p class="feature-text">Doorstep Cashless Repairs</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group-floating">
-                            <input id="companyName" type="text" class="form-control form-control-custom" placeholder=" " required>
-                            <label for="companyName" class="form-label-floating">Company Name or Trading Name</label>
+
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <p class="feature-text">Claim Assistance Support</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group-floating">
-                            <input id="contactNo" type="text" class="form-control form-control-custom" placeholder=" " aria-required="true" required>
-                            <label for="contactNo" class="form-label-floating">Contact No</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group-floating">
-                            <input id="emailID" type="email" class="form-control form-control-custom" placeholder=" " aria-required="true" required>
-                            <label for="emailID" class="form-label-floating">Email ID</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group-floating">
-                            <input id="occupation" type="text" class="form-control form-control-custom" placeholder=" " required>
-                            <label for="occupation" class="form-label-floating">Your Occupation/Business Activities</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group-floating">
-                            <select id="liabilityCover" class="form-control form-control-custom" required>
-                                <option value="" disabled selected>please Select</option>
-                                <option value="$5M">$5M</option>
-                                <option value="$10M">$10M</option>
-                                <option value="$20M">$20M</option>
-                                <option value="Not Required">Not Required</option>
-                            </select>
-                            <label for="liabilityCover" class="form-label-floating">How Much Public Liability Cover is Required?</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group-floating">
-                            <textarea id="equipmentDetails" class="form-control form-control-custom textarea-custom" placeholder=" " required></textarea>
-                            <label for="equipmentDetails" class="form-label-floating">Full Details of Equipment/Machinery</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group-floating">
-                            <textarea id="otherInsurance" class="form-control form-control-custom textarea-custom" placeholder=" "></textarea>
-                            <label for="otherInsurance" class="form-label-floating">Do you need any other insurance?</label>
+
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <p class="feature-text">Fast Policy Processing</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <button type="submit" class="submit-btn" aria-label="Submit Quote Form">Submit</button>
-            </form>
         </div>
     </div>
+</section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const selectElement = document.getElementById('liabilityCover');
-        
-        selectElement.addEventListener('change', function() {
-            if (this.value !== '') {
-                this.classList.add('has-value');
-            } else {
-                this.classList.remove('has-value');
-            }
-        });
-
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Quote form submitted successfully!');
-            this.reset();
-            selectElement.classList.remove('has-value');
-        });
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
