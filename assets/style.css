@@ -674,7 +674,7 @@
             transform: translateY(-50%);
             background-color: white;
             padding: 0 5px;
-            color: #757F95;
+            color: #828282;
             font-size: 16px;
             font-weight: 400;
             pointer-events: none;
@@ -715,16 +715,13 @@
         }
 
         select.form-control-custom option[value=""] {
-            color: #757F95;
+            color: #828282;
         }
 
         select.form-control-custom:focus {
             border: 2px solid #FF7200 !important;
         }
 
-        select.form-control-custom.has-value {
-            border: 2px solid #FF7200 !important;
-        }
 
         select.form-control-custom:focus + .form-label-floating,
         select.form-control-custom.has-value + .form-label-floating {
@@ -740,7 +737,7 @@
             transform: translateY(-50%);
             font-size: 16px;
             font-weight: 400;
-            color: #757F95;
+            color: #828282;
         }
 
         .textarea-custom {
@@ -780,12 +777,18 @@
             .submit-btn {
                 width: 100%;
             }
+            .form-label-floating {
+                font-size: 14px!important;
+            }
         }
 
         @media (max-width: 480px) {
             .quote-form-title {
                 font-size: 1.2rem;
                 margin-bottom: 30px;
+            }
+            .form-label-floating {
+                font-size: 12px!important;
             }
         }
 
@@ -954,10 +957,10 @@
                 height: 25px;
             }
             .accordion-button:not(.collapsed) {
-                font-size: 12px;
+                font-size: 14px;
             }
             .accordion-button{
-                font-size: 12px;
+                font-size: 14px;
             }
             .faq-title h2 {
                 font-size: 32px;
