@@ -453,7 +453,7 @@
             padding: 15px 0;
             display: flex;
             align-items: center;
-            color: #757F95;
+            color: #828282;
             font-size: 1rem;
         }
 
@@ -466,12 +466,6 @@
             flex-shrink: 0;
         }
 
-
-        /* .textarea-custom {
-            min-height: 120px!important;
-            resize: vertical;
-        } */
-
         @media (max-width: 768px) {
             .coverage-cards {
                 flex-direction: column;
@@ -481,7 +475,6 @@
               font-size: 18px;
             }
         }
-
 
           /* How To Get Insure Section */
         .insure-section {
@@ -831,7 +824,7 @@
             font-size: 18px;
             margin-bottom: 14px;
             line-height: 1.5;
-            color: #1a1a1a;
+            color: #828282;
         }
 
         .coverage-benefits-list li i {
@@ -895,7 +888,7 @@
         .accordion-button {
             font-weight: 500;
             padding: 12px;
-            color: #828282;
+            color: #000;
             font-size: 16px;
             background-color: white;
             box-shadow: none !important;
@@ -1203,7 +1196,7 @@
 
         .testimonial-text {
             font-size: 1rem;
-            color: #7f8c8d;
+            color: #828282;
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto;
