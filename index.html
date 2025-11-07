@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
@@ -107,6 +106,8 @@
         </div>
     </nav>
 
+  <main>
+
     <!-- Hero Section -->
     <section class="plant-hero">
         <div class="plant-hero-bg">
@@ -178,10 +179,10 @@
             <div class="coverage-section">
                 <div class="coverage-cards">
                     <div class="coverage-card">
-                        <h4>
+                        <h3>
                             <i class="fas fa-shield-alt"></i>
                             What Does the Insurance Cover?
-                        </h4>
+                        </h3>
                         <ul class="coverage-card-heading">
                             <li><i class="fas fa-check-circle"></i><span class="text-white">Material Damage</span></li>
                             <li><i class="fas fa-check-circle"></i><span class="text-white">Machinery Breakdown</span></li>
@@ -191,10 +192,10 @@
                         </ul>
                     </div>
                     <div class="coverage-card">
-                        <h4 class="coverage-card-heading">
+                        <h3 class="coverage-card-heading">
                             <i class="fas fa-shield-alt"></i>
                               Which Equipment and Machinery Are Covered?
-                        </h4>
+                        </h3>
                         <ul>
                             <li><i class="fas fa-check-circle"></i>Earthmoving equipment</li>
                             <li><i class="fas fa-check-circle"></i>Drilling and concreting equipment</li>
@@ -728,8 +729,7 @@
             </div>
         </div>
     </section>
-
-
+  </main>
      <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -834,6 +834,7 @@
         </div>
     </footer>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
      <script>
         const selectElement = document.getElementById('liabilityCover');
@@ -852,21 +853,19 @@
             this.reset();
             selectElement.classList.remove('has-value');
         });
-    </script>
-    <script>
-    const readMoreBtn = document.getElementById("readMoreBtn");
-    const moreText = document.getElementById("moreText");
+        const readMoreBtn = document.getElementById("readMoreBtn");
+        const moreText = document.getElementById("moreText");
 
-    readMoreBtn.addEventListener("click", function () {
-        if (moreText.style.display === "none" || moreText.style.display === "") {
-            moreText.style.display = "inline";
-            readMoreBtn.textContent = "Read Less";
-        } else {
-            moreText.style.display = "none";
-            readMoreBtn.textContent = "Read More";
-        }
-    });
-</script>
+        readMoreBtn.addEventListener("click", function () {
+            if (moreText.style.display === "none" || moreText.style.display === "") {
+                moreText.style.display = "inline";
+                readMoreBtn.textContent = "Read Less";
+            } else {
+                moreText.style.display = "none";
+                readMoreBtn.textContent = "Read More";
+            }
+        });
+    </script>
 
 
 </body>
