@@ -3,209 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Machinery Insurance</title>
+    <title>Testimonials</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* testimonials */
+        .testimonial-section{
+            background-color: #FFF7EC;
+            padding: 57px;
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
+        .testimonial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
         }
 
-        .plant-hero {
-            min-height: 100vh;
+        .testimonial-container h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .testimonial-container span {
+            color: #FF7200;
+        }
+        
+        .icon-arrow {
+            color: #2A3855!important;
+            font-size: 30px;
+        }
+
+        .testimonial-card {
+            border-radius: 20px;
+            padding: 50px 0;
+            text-align: center;
             position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow: visible;
-            margin-bottom: 80px;
         }
 
-        /* Background */
-        .plant-hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
+        .testimonial-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            overflow: hidden;
         }
 
-        .plant-hero-bg img {
+        .testimonial-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
         }
 
-        .plant-hero-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg,
-                rgba(200, 225, 240, 0.4) 0%,
-                rgba(180, 215, 235, 0.3) 50%,
-                rgba(160, 200, 225, 0.2) 100%);
-            z-index: 1;
-        }
-
-        .plant-hero-content {
-            position: relative;
-            z-index: 2;
-            min-height: 100vh;
-            padding: 80px 20px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .plant-title-area {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .plant-title {
-            font-size: 120px;
-            font-weight: 900;
-            margin-bottom: 0;
-            line-height: 1.2;
-            letter-spacing: -2px;
-        }
-
-        .plant-title-main {
-            color: #0d3b66;
-        }
-
-        .plant-title-highlight {
-            color: #ff8800;
-        }
-
-        .plant-features {
-            position: absolute;
-            bottom: -60px;
-            left: 0;
-            right: 0;
-            padding: 0 20px;
-            z-index: 10;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 12px;
-            padding: 22px 25px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s ease;
-            height: 100%;
-            backdrop-filter: blur(10px);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-
-        .feature-icon {
-            width: 45px;
-            height: 45px;
-            flex-shrink: 0;
-        }
-
-        .feature-icon svg {
-            width: 100%;
-            height: 100%;
-            fill: #ff8800;
-        }
-
-        .feature-text {
-            font-size: 20px;
+        .testimonial-name {
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #0d3b66;
-            margin: 0;
+            color: #2c3e50;
+            margin-bottom: 20px;
         }
 
-        @media(max-width:992px) {
-            .plant-title { font-size: 80px; }
+        .testimonial-text {
+            font-size: 1rem;
+            color: #7f8c8d;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        @media(max-width:768px) {
-            .plant-title { font-size: 60px; }
+        .testimonial-prev,
+        .testimonial-next {
+            width: 50px;
+            height: 50px;
+            background-color:transparent;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
         }
 
-        @media(max-width:576px) {
-            .plant-title { font-size: 45px; }
+        .testimonial-prev {
+            left: 50px;
+        }
+
+        .testimonial-next {
+            right: 50px;
+        }
+
+        /* Star Rating */
+        .star-rating {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .star-rating i {
+            color: #FFD700;
+        }
+
+        /* Custom Indicators */
+        .carousel-indicators {
+            position: relative;
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            width: 40px;
+            height: 4px;
+            border-radius: 2px;
+            background-color: #d1d5db;
+            border: none;
+            margin: 0 5px;
+            opacity: 1;
+        }
+
+        .carousel-indicators .active {
+            background-color: #FF7200;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-container h2 { font-size: 1.8rem; }
+            .testimonial-card { padding: 40px 20px; min-height: auto; }
+            .testimonial-image { width: 120px; height: 120px; }
+            .testimonial-name { font-size: 1.5rem; }
+            .testimonial-text { font-size: 0.9rem; }
+            .testimonial-prev, .testimonial-next { width: 40px; height: 40px; }
+            .testimonial-prev { left: -20px; }
+            .testimonial-next { right: -20px; }
+            .icon-arrow {
+                font-size: 20px;
+            }
+            .star-rating {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .testimonial-container h2 { font-size: 1.5rem; }
+            .testimonial-card { padding: 30px 15px; }
+            .testimonial-image { width: 100px; height: 100px; }
+            .testimonial-name { font-size: 1.3rem; }
+            .testimonial-text { font-size: 0.85rem; }
+            .testimonial-prev { left: 0; }
+            .testimonial-next { right: 0; }
+            .star-rating {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <section class="testimonial-section">
+        <div class="testimonial-container">
+            <h2>User <span>Testimonial's</span></h2>
+            <div id="testimonialCarouselUnique" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
 
-<section class="plant-hero">
-    <div class="plant-hero-bg">
-        <img src="your-background-image.jpg" alt="Plant Machinery">
-    </div>
-
-    <div class="plant-hero-content">
-        <div class="container">
-            <div class="plant-title-area">
-                <h1 class="plant-title">
-                    <span class="plant-title-main">Plant Machinery</span>
-                    <span class="plant-title-highlight">Insurance</span>
-                </h1>
-            </div>
-
-            <div class="plant-features">
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                </svg>
+                    <div class="testimonial-slide carousel-item active">
+                        <div class="testimonial-card">
+                            <h3 class="testimonial-name">Gargi Patel</h3>
+                            <div class="star-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
                             </div>
-                            <p class="feature-text">Doorstep Cashless Repairs</p>
+                            <p class="testimonial-text">
+                                Amazing team, spot on giving best comparison giving timely reminders during renewal, very polite and cooperative MJ Kim Thanks for all your wonderful suggestions and cooperation. All the best!!!
+                            </p>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                </svg>
+                    <div class="testimonial-slide carousel-item">
+                        <div class="testimonial-card">
+                            <h3 class="testimonial-name">Peter Della Franca</h3>
+                            <div class="star-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
                             </div>
-                            <p class="feature-text">Claim Assistance Support</p>
+                            <p class="testimonial-text">
+                                I have been using iLink insurance brokers for a number of years and found that they fast, helpful and very professional in delivering the most affordable insurance quotes. I always request the assistance of Shipra as she continues to provide the best service.
+                            </p>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                </svg>
+                    <div class="testimonial-slide carousel-item">
+                        <div class="testimonial-card">
+                            <h3 class="testimonial-name">Anthony Benedict</h3>
+                            <div class="star-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
                             </div>
-                            <p class="feature-text">Fast Policy Processing</p>
+                            <p class="testimonial-text">
+                                Shalin & team were very thorough in their domain and helped us simplify the overall process.
+                                5 Stars - Exceptional Service!
+                            </p>
                         </div>
                     </div>
+
+                    <div class="testimonial-slide carousel-item">
+                        <div class="testimonial-card">
+                            <h3 class="testimonial-name">Sarah Johnson</h3>
+                            <div class="star-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            
+                            <p class="testimonial-text">
+                                Outstanding service from start to finish! The team went above and beyond to find me the perfect insurance plan. Their expertise and dedication are truly commendable. Highly recommend!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide carousel-item">
+                        <div class="testimonial-card">
+                            <h3 class="testimonial-name">Michael Chen</h3>
+                            <div class="star-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                Excellent experience with iLink! They made the entire insurance process so easy and stress-free. The team is knowledgeable, responsive, and truly cares about their clients. I couldn't be happier!
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialCarouselUnique" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialCarouselUnique" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialCarouselUnique" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#testimonialCarouselUnique" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#testimonialCarouselUnique" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

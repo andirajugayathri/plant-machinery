@@ -311,6 +311,10 @@
              .plant-features {
                 bottom: 35px;
             }
+            .feature-card {
+                justify-content: left;
+                padding: 22px 10px;
+            }
         }
 
         @media(max-width:576px) {
@@ -328,12 +332,20 @@
             background-color: white;
         }
 
+        .plant-machinery-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .plant-machinery-title h2 .highlight {
+            color: #FF7200;
+        }
+
         .plant-machinery-title h2{
             color: #013469;
             font-size: 48px;
             font-weight: 700;
-            margin-bottom: 30px;
-            text-align: center;
+           
         }
 
         .plant-machinery-text {
@@ -353,7 +365,7 @@
 
         @media (max-width: 768px) {
             .plant-machinery-section {
-                padding: 50px 0;
+                padding: 0;
             }
 
         }
@@ -634,7 +646,7 @@
 
         .quote-form-title {
             text-align: center;
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 700;
             color: #003672;
             margin-bottom: 40px;
@@ -788,13 +800,21 @@
         .coverage-benefits-section {
            margin-top: 60px;
         }
+        .coverage-benefits-title{
+            margin-bottom: 25px;
+            text-align: center;
+        }
 
-        .coverage-benefits-title {
-            font-size: 36px;
+        .coverage-benefits-title h2{
+            font-size: 48px;
             font-weight: 700;
             margin-bottom: 25px;
             color: #003672;
             text-align: center;
+        }
+
+        .coverage-benefits-title h2 .highlight{
+            color: #ff7200;
         }
 
         .coverage-benefits-list {
@@ -820,7 +840,7 @@
             margin-top: 3px;
         }
         @media (max-width: 992px) {
-            .coverage-benefits-title {
+            .coverage-benefits-title h2 {
                 font-size: 26px;
             }
             .coverage-benefits-list {
@@ -832,7 +852,7 @@
         }
         @media (max-width: 576px) {
 
-            .coverage-benefits-title {
+            .coverage-benefits-title h2 {
                 font-size: 22px;
                 margin-bottom: 20px;
             }
@@ -938,7 +958,7 @@
          @media (max-width: 768px) {
             .faq-icon{
                 width: 30px;
-                height: 20px;
+                height: 25px;
             }
             .accordion-button:not(.collapsed) {
                 font-size: 12px;
@@ -951,7 +971,7 @@
             }
         }
 
-        /* other services */
+        /* Explore More Insurance Solutions */
          .services-section {
             padding: 80px 0 0 0;
         }
@@ -1109,7 +1129,7 @@
             }
 
             .service-container {
-                padding: 0 40px;
+                padding: 0;
             }
         }
 
@@ -1139,11 +1159,11 @@
             }
 
             .service-container {
-                padding: 0 35px;
+                padding: 0;
             }
         }
          
-        /* testimonials */
+         /* testimonials */
         .testimonial-section{
             background-color: #FFF7EC;
             padding: 57px;
@@ -1157,45 +1177,27 @@
         }
 
         .testimonial-container h2 {
-            font-size: 2.5rem;
+            font-size: 40px;
             font-weight: 700;
-            color: #2c3e50;
+            color: #013469;
         }
 
         .testimonial-container span {
             color: #FF7200;
         }
-        
-        .icon-arrow {
-            color: #2A3855!important;
-            font-size: 30px;
-        }
+       
 
         .testimonial-card {
             border-radius: 20px;
             padding: 50px 0;
+            height: 300px;
             text-align: center;
             position: relative;
         }
-
-        .testimonial-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 30px;
-            overflow: hidden;
-        }
-
-        .testimonial-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         .testimonial-name {
-            font-size: 1.8rem;
+            font-size: 32px;
             font-weight: 700;
-            color: #2c3e50;
+            color: #2A3855;
             margin-bottom: 20px;
         }
 
@@ -1226,10 +1228,39 @@
             right: 50px;
         }
 
+        /* Star Rating */
+        .star-rating {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .star-rating i {
+            color: #FFD700;
+        }
+
+        .carousel-indicators {
+            position: relative;
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            width: 40px;
+            height: 4px;
+            border-radius: 2px;
+            background-color: #d1d5db;
+            border: none;
+            margin: 0 5px;
+            opacity: 1;
+        }
+
+        .carousel-indicators .active {
+            background-color: #FF7200;
+        }
+
         @media (max-width: 768px) {
             .testimonial-container h2 { font-size: 1.8rem; }
             .testimonial-card { padding: 40px 20px; min-height: auto; }
-            .testimonial-image { width: 120px; height: 120px; }
             .testimonial-name { font-size: 1.5rem; }
             .testimonial-text { font-size: 0.9rem; }
             .testimonial-prev, .testimonial-next { width: 40px; height: 40px; }
@@ -1238,16 +1269,24 @@
             .icon-arrow {
                 font-size: 20px;
             }
+            .star-rating {
+                font-size: 1.2rem;
+            }
+            .testimonial-section {
+                padding: 57px 0;
+            }
         }
 
         @media (max-width: 576px) {
             .testimonial-container h2 { font-size: 1.5rem; }
-            .testimonial-card { padding: 30px 15px; }
-            .testimonial-image { width: 100px; height: 100px; }
+            .testimonial-card { padding: 30px 15px; height: auto; }
             .testimonial-name { font-size: 1.3rem; }
             .testimonial-text { font-size: 0.85rem; }
             .testimonial-prev { left: 0; }
             .testimonial-next { right: 0; }
+            .star-rating {
+                font-size: 1rem;
+            }
         }
 
         /* footer */
