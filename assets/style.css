@@ -70,6 +70,17 @@
             margin-right: 14px;
             color: #333;
         }
+
+        .contact-infoz a {
+            text-decoration: none;
+            margin-right: 14px;
+            color: #333;
+        }
+        @media (min-width: 789px) {
+            .contact-infoz a{
+                display: none;
+            }
+        }
         @media (max-width: 1199px) {
         .navbar .contact-info {
             display: none;
@@ -756,7 +767,7 @@
         select.form-control-custom.has-value + .form-label-floating {
             top: 0;
             transform: translateY(-50%);
-            font-size: 0.75rem;
+            font-size: 0.75rem!important;
             color: #FF7200;
             font-weight: 600;
         }
