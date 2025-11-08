@@ -341,7 +341,7 @@
     
     .feature-card {
         justify-content: left;
-        padding: 22px 10px;
+        padding: 10px 10px;
     }
 }
 
@@ -1473,4 +1473,24 @@
         .steadfast-logo {
             margin-top: 15px;
         }
+        }
+
+
+        /* quote button side */
+        .quote-button {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ff7200;
+            color: white;
+            padding: 15px 10px;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 5px 0 0 5px;
+            font-size: 18px;
+            z-index: 1000;
         }
